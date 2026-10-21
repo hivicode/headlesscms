@@ -1,0 +1,109 @@
+# ==============================================================================
+# The Serverless Odyssey - Comprehensive Git Ignore Policy
+# DevSecOps & Cloud Engineering Standard
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Dependency Directories
+# ------------------------------------------------------------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Yarn v2+
+.pnp
+.pnp.js
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# ------------------------------------------------------------------------------
+# 2. Next.js, Turbopack & Build Artifacts
+# ------------------------------------------------------------------------------
+.next/
+out/
+build/
+dist/
+*.tsbuildinfo
+next-env.d.ts
+
+# ------------------------------------------------------------------------------
+# 3. Environment Variables & Credentials (CRITICAL - DO NOT COMMIT)
+# ------------------------------------------------------------------------------
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env*.local
+
+# Whitelist environment template for repository cloning
+!.env.example
+
+# ------------------------------------------------------------------------------
+# 4. Supabase Local CLI & Secrets
+# ------------------------------------------------------------------------------
+supabase/.temp
+supabase/.branches
+.supabase/
+*.db
+*.sqlite
+*.sqlite3
+
+# ------------------------------------------------------------------------------
+# 5. Certificates, Keystores & Cryptographic Secrets
+# ------------------------------------------------------------------------------
+*.pem
+*.key
+*.cert
+*.crt
+*.pfx
+*.p12
+
+# ------------------------------------------------------------------------------
+# 6. Vercel & Cloud Deployment Cache
+# ------------------------------------------------------------------------------
+.vercel
+
+# ------------------------------------------------------------------------------
+# 7. Testing & Coverage
+# ------------------------------------------------------------------------------
+coverage/
+*.lcov
+.nyc_output/
+
+# ------------------------------------------------------------------------------
+# 8. OS Temporary Files & IDE / Editor Caches
+# ------------------------------------------------------------------------------
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# IDE / Text Editors
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.sublime-workspace
+*.sublime-project
+*.swp
+*.swo
+*~
