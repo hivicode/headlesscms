@@ -1,7 +1,17 @@
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Layers, Sparkles, Database, Cloud, Zap, ShieldCheck } from "lucide-react";
+import {
+  ArrowRight,
+  Layers,
+  Sparkles,
+  Database,
+  Cloud,
+  Zap,
+  ShieldCheck,
+  PlusCircle,
+  FileCheck2,
+} from "lucide-react";
 
 export default function HomePage() {
   return (
@@ -40,9 +50,9 @@ export default function HomePage() {
       <main className="relative z-10 flex-1 flex items-center justify-center px-6 py-20">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           {/* Milestone Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-primary text-xs font-medium backdrop-blur-md animate-fade-in shadow-xs">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-primary text-xs font-medium backdrop-blur-md shadow-xs">
             <Sparkles className="h-3.5 w-3.5 text-primary" />
-            <span>The Serverless Odyssey • Minggu 02</span>
+            <span>The Serverless Odyssey • Minggu 02 (Mutasi Data Server Action)</span>
           </div>
 
           {/* Headline */}
@@ -52,11 +62,11 @@ export default function HomePage() {
               <span className="bg-gradient-to-r from-primary via-indigo-500 to-emerald-500 bg-clip-text text-transparent">
                 Serverless Odyssey
               </span>{" "}
-              Modern & Skalabel
+              dengan React 19 Actions
             </h1>
             <p className="max-w-2xl mx-auto text-base sm:text-lg text-muted-foreground leading-relaxed">
-              Platform orkestrasi tugas kuliah modern berbasis Next.js 16 App Router, React Server Components (RSC), 
-              PostgreSQL Supabase terkelola, Cloudinary CDN, dan Vercel Edge Runtime.
+              Platform orkestrasi perkuliahan modern berbasis Next.js 16 App Router, React 19 Server Actions,
+              validasi defensif Zod, PostgreSQL Supabase terkelola, Cloudinary CDN, dan Vercel Edge.
             </p>
           </div>
 
@@ -65,25 +75,23 @@ export default function HomePage() {
             <Link href="/tasks">
               <Button
                 size="lg"
-                className="w-full sm:w-auto font-semibold px-8 py-6 text-sm group relative overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-primary/25 hover:-translate-y-0.5"
+                className="w-full sm:w-auto font-semibold px-8 py-6 text-sm group relative overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-primary/25 hover:-translate-y-0.5 cursor-pointer"
               >
-                <span>Eksplorasi Dashboard Tugas</span>
+                <PlusCircle className="mr-2 h-4 w-4" />
+                <span>Buka Form Pembuatan Tugas</span>
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Button>
             </Link>
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Link href="/tasks">
               <Button
                 size="lg"
                 variant="outline"
-                className="w-full sm:w-auto font-semibold px-8 py-6 text-sm border-border hover:bg-muted/50 transition-all duration-300 hover:-translate-y-0.5"
+                className="w-full sm:w-auto font-semibold px-8 py-6 text-sm border-border hover:bg-muted/50 transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
               >
-                Dokumentasi & Arsitektur
+                <FileCheck2 className="mr-2 h-4 w-4 text-primary" />
+                <span>Lihat Dashboard & Metrik</span>
               </Button>
-            </a>
+            </Link>
           </div>
 
           {/* 4 Pillars Highlight */}
@@ -92,8 +100,8 @@ export default function HomePage() {
               <div className="h-8 w-8 rounded-lg bg-black/5 dark:bg-white/5 flex items-center justify-center text-primary">
                 <Layers className="h-4 w-4" />
               </div>
-              <p className="font-semibold text-sm">Next.js 16 RSC</p>
-              <p className="text-xs text-muted-foreground">Komputasi Server Components tanpa overhead klien.</p>
+              <p className="font-semibold text-sm">React 19 Actions</p>
+              <p className="text-xs text-muted-foreground">Mutasi data via useActionState tanpa API Route manual.</p>
             </div>
 
             <div className="p-4 rounded-xl border border-border/60 bg-card/50 backdrop-blur-sm text-left space-y-1.5 transition-all hover:border-emerald-500/40 hover:bg-card">
@@ -116,8 +124,8 @@ export default function HomePage() {
               <div className="h-8 w-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
                 <ShieldCheck className="h-4 w-4" />
               </div>
-              <p className="font-semibold text-sm">DevSecOps Standard</p>
-              <p className="text-xs text-muted-foreground">Zero credential leakage dengan proteksi git komprehensif.</p>
+              <p className="font-semibold text-sm">Zod Validation</p>
+              <p className="text-xs text-muted-foreground">Validasi defensif schema-first di lingkungan server aman.</p>
             </div>
           </div>
         </div>
@@ -125,7 +133,7 @@ export default function HomePage() {
 
       {/* Minimal Footer */}
       <footer className="relative z-10 border-t border-border/50 py-6 text-center text-xs text-muted-foreground">
-        The Serverless Odyssey • Built with Next.js 16 App Router & Tailwind CSS
+        The Serverless Odyssey • Built with Next.js 16 App Router, React 19 & Shadcn UI
       </footer>
     </div>
   );
